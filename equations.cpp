@@ -4,6 +4,7 @@ using namespace std;
 /**
  * @author: jeetscmaker, 
  * contest: Codeforces Round #609 (Div. 2), problem: (A) Equation
+ * Time: 30 milli Seconds, Memory: 3700 KB
  * */
 
 const int64_t LIMIT = 1e9;
