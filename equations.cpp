@@ -1,32 +1,32 @@
 #include <bits/stdc++.h>
 using namespace std;
-
-/**
- * @author: jeetscmaker, 
- * contest: Codeforces Round #609 (Div. 2), problem: (A) Equation
- * Time: 30 milli Seconds, Memory: 3700 KB
- * */
-
-const int64_t LIMIT = 1e9;
-
-bool is_composite(int64_t n) {
-    for (int i = 2; i <= sqrt(n); ++i)
-    {
-        if (n%i == 0)
-            return true;
+int main(){
+  int t;
+  cin >> t;
+  for (int i = 0; i < t; i++){
+    int n, H;
+    cin >> n >> H;
+    vector<int> a(n);
+    for (int j = 0; j < n; j++){
+      cin >> a[j];
     }
-    return false;
-}
-
-int main() {
-    int64_t n;
-    cin >> n;
-    for (int64_t b = 4, a = b+n; a<=LIMIT && b<=LIMIT; b++, a++) {
-       if (is_composite(a) && is_composite(b))
-       {
-            cout << a << " " << b;
-            break;
-       }
+    int mx1 = 0, mx2 = 0;
+    for (int j = 0; j < n; j++){
+      if (a[j] > mx1){
+        mx2 = mx1;
+        mx1 = a[j];
+      } else if (a[j] > mx2){
+        mx2 = a[j];
+      }
     }
-    return 0;
+    int q = H / (mx1 + mx2);
+    int r = H % (mx1 + mx2);
+    if (r == 0){
+      cout << q * 2 << "\n";
+    } else if (r <= mx1){
+      cout << q * 2 + 1 << "\n";
+    } else {
+      cout << q * 2 + 2 << "\n";
+    }
+  }
 }
