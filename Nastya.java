@@ -5,7 +5,7 @@ import java.util.*;
 	 contest: Codeforces Round #546 (Div. 2), problem: (A) Nastya Is Reading a Book, Accepted
 */
 
-public class Solution {
+public class Nastya {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		int n = sc.nextInt();
