@@ -1,3 +1,5 @@
+// contest: Codeforces Round #791 (Div. 2), problem: (B) Stone Age Problem, C++ 20
+
 #include <bits/stdc++.h>
 using namespace std;
 using LL = long long;
