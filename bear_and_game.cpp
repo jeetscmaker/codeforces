@@ -1,20 +1,19 @@
 #include<bits/stdc++.h>
 using namespace std;
-int t[105];
 
 int main() {
 	int n;
-	scanf("%d", &n);
-	t[0] = 0;
-	for(int i = 1; i <= n; ++i)
-		scanf("%d", &t[i]);
-	t[n+1] = 91;
-	for(int i = 1; i <= n + 1; ++i) {
-		if(t[i] > t[i-1] + 15) {
-			printf("%d\n", t[i-1] + 15);
+	cin >> n;
+	int a[n+2];
+	a[0] = 0, a[n+1] = 91;
+	for (int i = 1; i < n+1; ++i)
+		cin >> a[i];
+	for(int i = 1; i <= n+1; i++){
+		if(a[i]-a[i-1] > 15) {
+			cout << a[i-1]+15;
 			return 0;
 		}
 	}
-	puts("90");
+	cout << 90;
 	return 0;
 }
