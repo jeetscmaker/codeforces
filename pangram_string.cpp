@@ -8,10 +8,11 @@ using namespace std;
  * but abcdEFGhijklMnopQrSTUvwXy1126477 is not because it misses a 'z' or 'Z'.
  * 
  * */
-int alphabets[26]; // all characters initialized to zero by default.
-int a = 97;
 
 bool is_pangram(string input) {
+    int alphabets[26];
+    for(int& x : alphabets) x = 0; // initialized all to zero.
+    int a = 97;
     for (int i = 0; i < input.length(); i++) {
         char c = input[i];
         int index = (int)c - a;
@@ -29,6 +30,14 @@ bool is_pangram(string input) {
 
 int main() {
     string s1 = "abcdEFGhijklMnopQrSTUvwXyZ";
+    std::transform(s1.begin(), s1.end(), s1.begin(),
+    [](unsigned char c){ return std::tolower(c); });
+    if(is_pangram(s1))
+        cout << "YES, " << s1 << " is a pangram.";
+    else
+        cout << "NO, " << s1 << " is not a pangram.";
+    cout << endl; 
+    s1 = "abcdEFGhijklMnopQrSTUvwXy1126477";
     std::transform(s1.begin(), s1.end(), s1.begin(),
     [](unsigned char c){ return std::tolower(c); });
     if(is_pangram(s1))
